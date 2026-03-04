@@ -1,102 +1,64 @@
 <div align="center">
 
-# 🎵 Muzic
+# Muzic
+### Local Audio Architecture
 
-### *Pure Sound. No Noise.*
-
-**The best ad-free offline music player for Android**
-
-[![Latest Release](https://img.shields.io/github/v/release/officialtechrom/Muzic-Releases?style=for-the-badge&color=7C4DFF&label=Download%20Latest)](https://github.com/officialtechrom/Muzic-Releases/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/officialtechrom/Muzic-Releases/total?style=for-the-badge&color=1A237E&label=Total%20Downloads)](https://github.com/officialtechrom/Muzic-Releases/releases)
+[![Latest Release](https://img.shields.io/github/v/release/officialtechrom/Muzic-Releases?style=for-the-badge&color=7C4DFF&label=Latest%20Release)](https://github.com/officialtechrom/Muzic-Releases/releases/latest)
 [![Android](https://img.shields.io/badge/Android-10%2B-brightgreen?style=for-the-badge&logo=android)](https://github.com/officialtechrom/Muzic-Releases/releases/latest)
 
----
-
 </div>
 
-## 📥 Download
+## Download
 
-👉 **[Click here to download the latest APK](https://github.com/officialtechrom/Muzic-Releases/releases/latest)**
+**[Download the latest release APK here](https://github.com/officialtechrom/Muzic-Releases/releases/latest)**
 
-Or check the **[Releases](https://github.com/officialtechrom/Muzic-Releases/releases)** section for all versions.
+For an archive of all versions, view the **[Releases](https://github.com/officialtechrom/Muzic-Releases/releases)** page.
 
----
+## System Capabilities
 
-## ✨ Features
-
-| Feature | Description |
+| Capability | Technical Details |
 |---------|-------------|
-| 🎶 **Offline Only** | No internet required — ever |
-| 🚫 **Zero Ads** | No ads, no popups, no interruptions |
-| 🔊 **Hi-Fi Audio** | FLAC, WAV, ALAC, OPUS, OGG, AAC, MP3 |
-| 🎨 **Beautiful UI** | Material Design 3 with dark theme |
-| 📂 **Smart Library** | Songs, Albums, Artists, Playlists, Folders |
-| ❤️ **Favorites** | One-tap access to your loved tracks |
-| 📝 **Playlists** | Create & manage unlimited playlists |
-| 🔀 **Full Controls** | Shuffle, Repeat, Queue management |
-| 🔔 **Notifications** | Play/pause from notification & lock screen |
-| 🎧 **Bluetooth** | Full hardware button support |
-| 🔒 **Privacy First** | No tracking, no analytics, no data collection |
-| ⚡ **Lightning Fast** | Scans 10,000+ songs in seconds |
+| **Offline Architecture** | Operates fundamentally without network requests or API dependencies. |
+| **Clean Distribution** | No advertisement SDKs, telemetry, or third-party wrappers injected. |
+| **Format Support** | Lossless (FLAC, WAV, ALAC) & Lossy (OPUS, OGG, AAC, MP3) audio decoding via ExoPlayer. |
+| **Material Theming** | AMOLED-optimized dark contrast rendering engineered with Jetpack Compose. |
+| **Library Indexing** | Local asynchronous MediaStore parsing (Songs, Albums, Artists, Playlists). |
+| **Persistent Playback** | Global MiniPlayer state maintained across UI components via Kotlin Flow. |
+| **State Management** | Room database persistence for Playlists and Favorites indexing. |
+| **MediaSession Integration** | Hardware Bluetooth event parsing, lock screen, and system notification controls. |
 
----
+## Requirements
 
-## 📱 Requirements
+- Android Minimum: API Level 29 (Android 10)
+- Architecture Support: ARM64-v8a / ARMEABI-v7a
+- Storage Authorization: `READ_MEDIA_AUDIO` / `READ_EXTERNAL_STORAGE`
 
-- Android 10 (API 29) or later
-- ~63 MB storage space
+## Installation Context
 
----
+1. Acquire the `.apk` from the **[Releases](https://github.com/officialtechrom/Muzic-Releases/releases/latest)** output stream.
+2. Execute the file via the Android package manager.
+3. If necessary, approve the "Install from Unknown Sources" security constraint in settings.
+4. On initialization, grant local storage permission when the system dialogue prompts.
 
-## 📦 How to Install
+## Development Roadmap
 
-1. Download the APK from **[Releases](https://github.com/officialtechrom/Muzic-Releases/releases/latest)**
-2. Open the downloaded `.apk` file on your Android phone
-3. If prompted, allow "Install from Unknown Sources"
-4. Tap **Install**
-5. Open Muzic & grant **Storage Permission** when asked
-6. 🎵 Enjoy your music!
+- [x] v1.0.0 — Core engine initialization, MediaStore mapping, base UI components.
+- [x] v2.0.0 — Compose UI paradigm shift, Bottom navigation architecture, persistent state.
+- [ ] v2.1.0 — Direct system audio hooks (10-band Equalizer, Bass Boost algorithms).
+- [ ] v2.2.0 — Relational smart playlist generation based on playback metrics.
 
----
+## Privacy & Telemetry Statement
 
-## 🗺️ Roadmap
+Muzic enforces strict local-only data policies at the manifest level:
 
-- [x] v1.0.0 — Core player, library, playlists, favorites
-- [ ] v1.1.0 — 10-band Equalizer & Bass Boost
-- [ ] v1.2.0 — Smart Playlists & Sleep Timer
-- [ ] v1.3.0 — Gesture Navigation & Animations
-- [ ] v2.0.0 — Complete redesign & new features
+- **Network Interface Disabled:** The `INTERNET` permission is omitted from the Android Manifest. The binary physically cannot transmit data.
+- **Analyzation Tools Removed:** No logging libraries, crash reporters (e.g., Firebase, Sentry), or metric trackers are bundled.
+- **Local Sandbox:** All indexing databases reside strictly in the app's local user-secured storage sandbox.
 
----
+## Issue Tracking
 
-## 🛡️ Privacy & Security
+For crash reports or feature proposals, please submit reproducible logs in the **[Issues](https://github.com/officialtechrom/Muzic-Releases/issues)** section.
 
-Muzic is built with **privacy first** in mind:
+## License
 
-- ❌ No internet permission — app works 100% offline
-- ❌ No user tracking or analytics
-- ❌ No ads or third-party SDKs
-- ❌ No data collection of any kind
-- ✅ Your music stays on YOUR device
-
----
-
-## 🐛 Found a Bug?
-
-Report issues in the **[Issues](https://github.com/officialtechrom/Muzic-Releases/issues)** section.
-
----
-
-## 📄 License
-
-© 2026 officialtechrom. All rights reserved.
-
----
-
-<div align="center">
-
-**Made with ❤️ for music lovers**
-
-**Muzic** — *Pure Sound. No Noise.* 🎵
-
-</div>
+© 2026 officialtechrom. Maintained for personal application engineering. All rights reserved.
